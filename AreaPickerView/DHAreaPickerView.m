@@ -67,12 +67,12 @@
         UIToolbar * toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
         
         UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnResignFirstResponder)];
-        
+        leftItem.tintColor = [UIColor redColor];//设置取消按钮字体颜色
         //空白
         UIBarButtonItem *btn4=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
         
         UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStyleDone target:self action:@selector(rightBtnResignFirstResponder)];
-        
+        rightItem.tintColor = [UIColor redColor];//设置确定按钮字体颜色
         toolBar.items = @[leftItem,btn4,rightItem];
         
         return toolBar;
@@ -91,10 +91,11 @@
         self.provinceArray = (NSMutableArray <DHAreasProvinceModel *>*)self.areasModel.content;
         self.cityArray = (NSMutableArray <DHAreasCityModel *> *)self.provinceArray[0].childList;
         self.countryArray = (NSMutableArray <DHAreasCountryModel *> *)self.cityArray[0].childList;
-    
+        
         UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, 220)];
         pickerView.delegate = self;
         pickerView.dataSource = self;
+        pickerView.backgroundColor = [UIColor whiteColor];//设置pickerView的背景颜色
         return pickerView;
     }
     return _inputView;

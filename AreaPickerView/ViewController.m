@@ -40,6 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //取出区域数据
     NSString *areaPath = [[NSBundle mainBundle] pathForResource:@"area" ofType:@"db"];
     FMDatabase *dataBase = [FMDatabase databaseWithPath:areaPath];
     NSString *queryString = [NSString stringWithFormat:@"SELECT * FROM AllAreasTable"];
